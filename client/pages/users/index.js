@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 
 import { publicFetch } from 'utils/fetcher';
 
 import Layout from 'layout';
 import { SpinnerIcon } from 'components/icons';
-import { TagList, TagItem } from 'components/tag';
+import { UserList, UserItem } from 'components/user';
 import { PageTitle, SearchInput } from 'components/shared';
 
-function TagsPage() {
+const UsersPage = () => {
     const [searchTerm, setSearchTerm] = useState(null);
-    const [tags, setTags] = useState(null);
+    const [users, setUsers] = useState(null);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         if (searchTerm === null) {
             const fetchUser = async () => {
-                const { data } = await publicFetch.get('/tags');
-                setTags(data);
+                const { data } = await publicFetch.get('/users');
+                setUsers(data);
             }
 
             fetchUser();
@@ -25,9 +25,9 @@ function TagsPage() {
             const delayDebounceFn = setTimeout(async () => {
                 setLoading(true);
                 const { data } = await publicFetch.get(
-                    searchTerm ? `/tags/${searchTerm}` : `/tags`
+                    searchTerm ? `/users/${searchTerm}` : `/users`
                 );
-                setTags(data);
+                setUsers(data);
                 setLoading(false);
             }, 500);
 
@@ -38,17 +38,13 @@ function TagsPage() {
     return (
         <Layout extra={false}>
             <Head>
-                <title>Tags - Forum</title>
+                <title>Users - Forum</title>
             </Head>
 
-            <PageTitle title="Tags" borderBottom={false}>
-                A tag is a keyword or label that categorizes your question with other,
-                similar questions. Using the right tags makes it easier for others to
-                find and answer your question.
-            </PageTitle>
+            <PageTitle title="Tags" borderBottom={false} />
 
             <SearchInput
-                placeholder="Filter by tag name"
+                placeholder="Search by user"
                 autoFocus
                 isLoading={loading}
                 autoComplete="off"
@@ -56,27 +52,30 @@ function TagsPage() {
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
 
-            {!tags && (
+            {!users && (
                 <div className="loading">
                     <SpinnerIcon />
                 </div>
             )}
 
-            {tags && (
+            {users && (
                 <>
-                    <TagList>
-                        {tags?.map(({ count, _id }) => (
-                            <TagItem key={_id} count={count}>
-                                {_id}
-                            </TagItem>
+                    <UserList>
+                        {users?.map(({ username, avatar, created, id }) => (
+                            <UserItem
+                                key={_id}
+                                username={username}
+                                avatar={avatar}
+                                created={created}
+                            />
                         ))}
-                    </TagList>
+                    </UserList>
 
-                    {tags.length == 0 && <p className="not-found">No tags matched your search.</p>}
+                    {users.length == 0 && <p className="not-found">No tags matched your search.</p>}
                 </>
             )}
         </Layout>
     );
 };
 
-export default TagsPage;
+export default UsersPage;
