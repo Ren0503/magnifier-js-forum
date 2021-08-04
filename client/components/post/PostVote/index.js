@@ -15,11 +15,11 @@ const PostVote = ({ score, votes, questionId, answerId, setQuestion }) => {
     const { handleComponentVisible } = useContext(ModalContext);
 
     const isUpVoted = () => {
-        return votes.find((v) => v.user === authState.userInfo?.id).vote === 1;
+        return votes.find((v) => v.user === authState.userInfo?.id)?.vote === 1;
     }
 
     const isDownVoted = () => {
-        return votes.find((v) => v.user === authState.userInfo?.id).vote === -1;
+        return votes.find((v) => v.user === authState.userInfo?.id)?.vote === -1;
     }
 
     const upVote = async () => {

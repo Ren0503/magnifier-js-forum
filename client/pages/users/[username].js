@@ -33,7 +33,7 @@ const UserDetail = ({ username }) => {
             <UserCard>
                 <AvatarCard username={username} />
                 <PostList postType={postType} setPostType={setPostType}>
-                    {!post && (
+                    {!posts && (
                         <div className="loading">
                             <SpinnerIcon />
                         </div>

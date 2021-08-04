@@ -51,7 +51,7 @@ const Header = ({ className, ...props }) => {
                 </Button>
                 <div style={{ flex: 1 }}></div>
 
-                {!isAuthenticated() ? (
+                {isAuthenticated() ? (
                     <div className={styles.userInfo}>
                         <p>
                             Welcome{' '}

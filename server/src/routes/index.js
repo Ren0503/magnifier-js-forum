@@ -22,7 +22,7 @@ router.post('/authenticate', UserCtrl.validateUser, UserCtrl.authenticate);
 //  Users
 router.get('/users', UserCtrl.listUsers);
 router.get('/users/:search', UserCtrl.search);
-router.get('/users/:username', UserCtrl.find);
+router.get('/user/:username', UserCtrl.find);
 
 //  Questions
 router.param('question', QuestionCtrl.loadQuestions);

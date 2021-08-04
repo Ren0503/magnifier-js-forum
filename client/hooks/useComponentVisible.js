@@ -1,13 +1,13 @@
 import { useState, useEffect, useRef } from 'react';
 
 function useComponentVisible(initialIsVisible) {
-    const [isCompleteVisible, setIsCompleteVisible] = useState(initialIsVisible);
+    const [isComponentVisible, setIsComponentVisible] = useState(initialIsVisible);
     const ref = useRef(null);
     const toggleRef = useRef(null);
 
     const handleHide = (event) => {
         if (event.key === 'Escape') {
-            setIsCompleteVisible(false);
+            setIsComponentVisible(false);
         }
     };
 
@@ -17,7 +17,7 @@ function useComponentVisible(initialIsVisible) {
             !ref.current.contains(event.target) &&
             !toggleRef?.current?.contains(event.target)
         ) {
-            setIsCompleteVisible(false);
+            setIsComponentVisible(false);
         }
     };
 
@@ -30,7 +30,7 @@ function useComponentVisible(initialIsVisible) {
         }
     });
 
-    return { ref, toggleRef, isCompleteVisible, setIsCompleteVisible };
+    return { ref, toggleRef, isComponentVisible, setIsComponentVisible };
 };
 
 export default useComponentVisible;

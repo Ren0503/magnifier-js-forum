@@ -63,7 +63,7 @@ const UsersPage = () => {
                     <UserList>
                         {users?.map(({ username, avatar, created, id }) => (
                             <UserItem
-                                key={_id}
+                                key={id}
                                 username={username}
                                 avatar={avatar}
                                 created={created}
