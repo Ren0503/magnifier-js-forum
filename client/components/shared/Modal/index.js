@@ -16,6 +16,7 @@ const Modal = ({ children, className, ...props }) => {
                     <Button className={styles.closeButton} onClick={() => setIsComponentVisible((isOpen) => !isOpen)}>
                         <CloseIcon />
                     </Button>
+                    {children}
                 </div>
             </div>
         </>

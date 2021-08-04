@@ -6,12 +6,12 @@ import { publicFetch } from 'utils/fetcher';
 import { AuthContext } from 'store/auth';
 import ModalContext from 'store/modal';
 
-import FormInput from '../../shared/FormInput';
+import FormInput from 'components/shared/FormInput';
 import Button from 'components/shared/Button';
 
 import styles from './signup-form.module.css';
 
-const SignupForm = () => {
+const SignUpForm = () => {
     const { setAuthState } = useContext(AuthContext);
     const { setIsComponentVisible } = useContext(ModalContext);
 
@@ -109,4 +109,4 @@ const SignupForm = () => {
     );
 };
 
-export default SignupForm;
+export default SignUpForm;

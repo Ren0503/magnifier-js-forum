@@ -45,7 +45,7 @@ class MyDocument extends Document {
                     )}
 
                     {/* favicon */}
-                    <link rel="shortcut icon" href="/images/logo.svg" />
+                    <link rel="shortcut icon" href="/vercel.svg" />
                 </Head>
                 <body>
                     <Main />

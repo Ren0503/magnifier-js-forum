@@ -6,7 +6,7 @@ import { publicFetch } from 'utils/fetcher';
 import { AuthContext } from 'store/auth';
 import ModalContext from 'store/modal';
 
-import FormInput from '../../shared/FormInput';
+import FormInput from 'components/shared/FormInput';
 import Button from 'components/shared/Button';
 
 import styles from './login-form.module.css';
