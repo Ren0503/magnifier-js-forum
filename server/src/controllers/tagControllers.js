@@ -37,7 +37,7 @@ exports.searchTags = async (req, res, next) => {
             { $unwind: '$tags' },
             { $group: { _id: '$tags', count: { $sum: 1 } } },
             { $sort: { count: -1 } },
-            { $match: { _id: { $regex: tag, $option: 'i' } } },
+            { $match: { _id: { $regex: tag, $options: 'i' } } },
         ]);
         res.json(tags);
     } catch (error) {

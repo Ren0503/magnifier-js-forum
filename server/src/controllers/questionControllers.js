@@ -28,7 +28,7 @@ exports.createQuestion = async (req, res, next) => {
         const { title, tags, text } = req.body;
         const author = req.user.id;
 
-        const question = await req.question.create({
+        const question = await Question.create({
             title,
             author,
             tags,

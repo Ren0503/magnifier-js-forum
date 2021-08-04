@@ -47,18 +47,18 @@ questionSchema.options.toJSON.transform = (doc, ret) => {
     return obj;
 };
 
-questionSchema.method = {
+questionSchema.methods = {
     vote: function (user, vote) {
         const existingVote = this.votes.find((v) => v.user._id.equals(user));
 
         if (existingVote) {
             // reset score
             this.score -= existingVote.vote;
-            if (vote === 0) {
+            if (vote == 0) {
                 // remove vote
                 this.votes.pull(existingVote);
             } else {
-                // change vote
+                //change vote
                 this.score += vote;
                 existingVote.vote = vote;
             }
@@ -70,28 +70,30 @@ questionSchema.method = {
 
         return this.save();
     },
+
     addComment: function (author, body) {
         this.comments.push({ author, body });
         return this.save();
     },
+
     removeComment: function (id) {
         const comment = this.comments.id(id);
-        if (!comment)
-            throw new Error('Comment not found');
+        if (!comment) throw new Error('Comment not found');
         comment.remove();
         return this.save();
     },
+
     addAnswer: function (author, text) {
-        this.answer.push({ author, text });
+        this.answers.push({ author, text });
         return this.save();
     },
+
     removeAnswer: function (id) {
         const answer = this.answers.id(id);
-        if (!answer)
-            throw new Error('Answer not found');
+        if (!answer) throw new Error('Answer not found');
         answer.remove();
         return this.save();
-    },
+    }
 };
 
 questionSchema.pre(/^find/, function () {
@@ -116,5 +118,6 @@ questionSchema.post('save', function (doc, next) {
         .execPopulate()
         .then(() => next());
 });
+
 
 module.exports = mongoose.model('Question', questionSchema);
