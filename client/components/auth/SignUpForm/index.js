@@ -3,8 +3,8 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 
 import { publicFetch } from 'utils/fetcher';
-import { AuthContext } from 'store/auth';
-import ModalContext from 'store/modal';
+import { AuthContext } from 'context/auth';
+import ModalContext from 'context/modal';
 
 import FormInput from 'components/shared/FormInput';
 import Button from 'components/shared/Button';

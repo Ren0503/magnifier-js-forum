@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-import { FetchContext } from 'store/fetch';
-import { AuthContext } from 'store/auth';
-import ModalContext from 'store/modal';
+import { FetchContext } from 'context/fetch';
+import { AuthContext } from 'context/auth';
+import ModalContext from 'context/modal';
 
 import { TextArea, Button } from 'components/shared';
 import { Tag } from 'components/tag';

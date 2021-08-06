@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import cn from 'classnames';
 
-import { AuthContext } from 'store/auth';
+import { AuthContext } from 'context/auth';
 import Button from '../Button';
 
 import styles from './page-title.module.css';

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 
-import { AuthContext } from 'store/auth';
-import ModalContext from 'store/modal';
+import { AuthContext } from 'context/auth';
+import ModalContext from 'context/modal';
 
 import AddComment from '../AddComment';
 

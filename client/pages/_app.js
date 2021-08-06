@@ -3,10 +3,10 @@ import Router from 'next/router'
 import NProgress from 'nprogress';
 
 import useComponentVisible from 'hooks/useComponentVisible';
-import ModalContext from 'store/modal';
-import { AuthProvider } from 'store/auth';
-import { FetchProvider } from 'store/fetch';
-import { TagProvider } from 'store/tag';
+import ModalContext from 'context/modal';
+import { AuthProvider } from 'context/auth';
+import { FetchProvider } from 'context/fetch';
+import { TagProvider } from 'context/tag';
 
 import { Modal } from 'components/shared';
 import AuthForms from 'components/auth';

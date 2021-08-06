@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import cn from 'classnames';
 
-import ModalContext from 'store/modal';
+import ModalContext from 'context/modal';
 import { CloseIcon } from 'components/icons';
 import Button from '../Button';
 

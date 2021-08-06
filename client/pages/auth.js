@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import { AuthContext } from 'store/auth';
+import { AuthContext } from 'context/auth';
 import AuthForms from 'components/auth';
 
 const Login = () => {

@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import Link from 'next/link';
 import format from 'date-fns/format';
 
-import { AuthContext } from 'store/auth';
-import { FetchContext } from 'store/fetch';
+import { AuthContext } from 'context/auth';
+import { FetchContext } from 'context/fetch';
 
 import styles from './comment-item.module.css';
 

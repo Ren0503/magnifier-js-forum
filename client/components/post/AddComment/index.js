@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-import { FetchContext } from 'store/fetch';
+import { FetchContext } from 'context/fetch';
 import { TextArea, Button } from 'components/shared';
 
 import styles from './add-comment.module.css';

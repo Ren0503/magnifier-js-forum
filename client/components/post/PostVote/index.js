@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
-import { AuthContext } from 'store/auth';
-import { FetchContext } from 'store/fetch';
-import ModalContext from 'store/modal';
+import { AuthContext } from 'context/auth';
+import { FetchContext } from 'context/fetch';
+import ModalContext from 'context/modal';
 
 import { Button } from 'components/shared';
 import { ArrowUpIcon, ArrowDownIcon } from 'components/icons';

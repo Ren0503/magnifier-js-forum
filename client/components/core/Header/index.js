@@ -3,8 +3,8 @@ import Link from 'next/link';
 import cn from 'classnames';
 
 import CONST from 'constants';
-import ModalContext from 'store/modal';
-import { AuthContext } from 'store/auth';
+import ModalContext from 'context/modal';
+import { AuthContext } from 'context/auth';
 import useWindowSize from 'hooks/useWindowSize';
 import useComponentVisible from 'hooks/useComponentVisible';
 

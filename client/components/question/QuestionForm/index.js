@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
-import { FetchContext } from 'store/fetch';
+import { FetchContext } from 'context/fetch';
 import { Button, TextArea, FormInput } from 'components/shared';
 import { TagInput } from 'components/tag';
 

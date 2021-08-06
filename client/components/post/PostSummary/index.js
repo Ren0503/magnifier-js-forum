@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict';
 
-import { AuthContext } from 'store/auth';
-import { FetchContext } from 'store/fetch';
+import { AuthContext } from 'context/auth';
+import { FetchContext } from 'context/fetch';
 
 import { Tag } from 'components/tag';
 
