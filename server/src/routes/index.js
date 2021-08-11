@@ -29,7 +29,7 @@ router.param('question', QuestionCtrl.loadQuestions);
 router.post('/questions', [protect, QuestionCtrl.questionValidate], QuestionCtrl.createQuestion);
 router.get('/question/:question', QuestionCtrl.show);
 router.get('/question', QuestionCtrl.listQuestions);
-router.get('/question/:tags', QuestionCtrl.listByTags);
+router.get('/questions/:tags', QuestionCtrl.listByTags);
 router.get('/question/user/:username', QuestionCtrl.listByUser);
 router.delete('/question/:question', [protect, questionAuth], QuestionCtrl.removeQuestion);
 

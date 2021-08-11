@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "concurrently": "^6.2.1"
+  },
+  "name": "magnifier",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Ren0503/onemillion.git",
+  "author": "Ren0503 <illuminati0440@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start:server": "npm run dev --prefix server",
+    "start:client": "npm run dev --prefix client",
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\""
+  }
+}

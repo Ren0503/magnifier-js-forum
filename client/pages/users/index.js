@@ -41,7 +41,7 @@ const UsersPage = () => {
                 <title>Users - Forum</title>
             </Head>
 
-            <PageTitle title="Tags" borderBottom={false} />
+            <PageTitle title="Users" borderBottom={false} />
 
             <SearchInput
                 placeholder="Search by user"
