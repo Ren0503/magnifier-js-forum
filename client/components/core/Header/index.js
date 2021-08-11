@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import Link from 'next/link';
 import cn from 'classnames';
-
+import Image from 'next/image';
 import CONST from 'constants';
 import ModalContext from 'context/modal';
 import { AuthContext } from 'context/auth';
@@ -10,9 +10,10 @@ import useComponentVisible from 'hooks/useComponentVisible';
 
 import Button from 'components/shared/Button';
 import Dropdown from '../Dropdown';
-import { MenuIcon, CloseIcon, LogoIcon } from 'components/icons';
+import { MenuIcon, CloseIcon } from 'components/icons';
 
 import styles from './header.module.css';
+import logo from 'public/logo.png';
 
 const Header = ({ className, ...props }) => {
     const { handleComponentVisible } = useContext(ModalContext);
@@ -44,6 +45,8 @@ const Header = ({ className, ...props }) => {
                     </Button>
                 </div>
                 <Button className={styles.logo} href="/">
+                    <Image src={logo} alt="Logo" width="35" height="35" />
+                    Magnifier
                 </Button>
                 <div style={{ flex: 1 }}></div>
 

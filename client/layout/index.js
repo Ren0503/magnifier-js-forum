@@ -4,7 +4,7 @@ import cn from 'classnames';
 import CONST from 'constants';
 import useWindowSize from 'hooks/useWindowSize';
 
-import { Header, Sidebar, Main, Extra } from 'components/core';
+import { Header, Sidebar, Main, Extra, Footer } from 'components/core';
 
 import styles from './layout.module.css';
 
@@ -20,6 +20,7 @@ const Layout = ({ extra = true, children }) => {
                     {size.width > CONST.TABLET_SIZE && extra && <Extra />}
                 </div>
             </div>
+            <Footer />
         </div>
     );
 };

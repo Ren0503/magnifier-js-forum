@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 
-import { LogoIcon } from 'components/icons';
+import Image from 'next/image';
 import SignUpForm from './SignUpForm';
 import LoginForm from './LoginForm';
+import logo from 'public/logo.png';
 
 import styles from './auth-forms.module.css';
 
@@ -16,7 +17,7 @@ const AuthForms = ({ screen = 'signup' }) => {
                 <title>{form == 'login' ? 'Log In' : 'Sign Up'} - Forum</title>
             </Head>
 
-            <LogoIcon className={styles.logo} />
+            <Image src={logo} alt="Logo" width="35" height="35" />
 
             {form === 'login' ? <LoginForm /> : <SignUpForm />}
 
