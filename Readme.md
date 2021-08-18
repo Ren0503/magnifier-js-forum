@@ -13,4 +13,29 @@
 6. Search by tags
 7. Search users
 8. Sorting by views, vote, newer
-9. Admin
+
+### Server
+
+| Plugin | README |
+| ------ | ------ |
+| bcryptjs | [plugins/bcryptjs/README.md](https://github.com/dcodeIO/bcrypt.js/blob/master/README.md) |
+| body-parser | [plugins/body-parser/README.md](https://github.com/expressjs/body-parser/blob/master/README.md) |
+| cors | [plugins/cors/README.md](https://github.com/expressjs/cors/blob/master/README.md)|
+| express | [plugins/express/README.md](https://github.com/expressjs/express/blob/master/Readme.md) |
+| jsonwebtoken | [plugins/jsonwebtoken/README.md](https://github.com/auth0/node-jsonwebtoken/blob/master/README.md) |
+| mongoose | [plugins/mongoose/README.md](https://github.com/Automattic/mongoose/blob/master/README.md) |
+| morgan | [plugins/morgan/README.md](https://github.com/expressjs/morgan/blob/master/README.md) |
+| nodemon | [plugins/nodemon/README.md](https://github.com/remy/nodemon/blob/master/README.md) |
+
+### Client
+
+| Plugin | README |
+| ------ | ------ |
+| axios | [plugins/axios/README.md](https://github.com/axios/axios/blob/master/README.md) |
+| formik | [plugins/formik/README.md](https://github.com/formium/formik/blob/master/packages/formik/README.md) |
+| next | [plugins/next/README.md](https://github.com/vercel/next.js/blob/canary/packages/next/README.md) |
+| react | [plugins/react/README.md](https://github.com/facebook/react/blob/master/README.md) |
+| react-quill | [plugins/react-quill/README.md](https://github.com/zenoamaro/react-quill/blob/master/README.md) |
+| react-tagsinput | [plugins/react-tagsinput/README.md](https://github.com/olahol/react-tagsinput/blob/master/README.md) |
+| yup | [plugins/yup/README.md](https://github.com/reduxjs/redux)|
+| postcss | [plugins/postcss/README.md](https://github.com/postcss/postcss/blob/main/README.md)|
