@@ -30,7 +30,7 @@ const AvatarCard = ({ username }) => {
                         <Link href="/users/[username]" as={`/users/${username}`}>
                             <a>
                                 <img
-                                    src={`https://secure.gravatar.com/avatar/${userInfo.id}?s=164&d=identicon`}
+                                    src={`${userInfo.avatar}&s=164`}
                                     alt={username}
                                 />
                             </a>

@@ -16,8 +16,8 @@ const {
 } = require('../middleware/authMiddleware');
 
 //  Authentication
-router.post('/signup', UserCtrl.validateUser, UserCtrl.signup);
-router.post('/authenticate', UserCtrl.validateUser, UserCtrl.authenticate);
+router.post('/signup', UserCtrl.signupUser, UserCtrl.signup);
+router.post('/login', UserCtrl.loginUser, UserCtrl.login);
 
 //  Users
 router.get('/users', UserCtrl.listUsers);

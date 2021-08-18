@@ -19,7 +19,7 @@ const SignUpForm = () => {
 
     return (
         <Formik
-            initialValues={{ username: '', password: '', passwordConfirm: '' }}
+            initialValues={{ username: '', email: '', password: '', passwordConfirm: '' }}
             onSubmit={async (values, { setStatus, resetForm }) => {
                 setLoading(true);
                 try {
@@ -38,6 +38,9 @@ const SignUpForm = () => {
                     .required('Required')
                     .max(16, 'Must be at most 16 characters long')
                     .matches(/^[a-zA-Z0-9_-]+$/, 'Contains invalid characters'),
+                email: Yup.string()
+                    .required('Required')
+                    .email('Invalid email format'),
                 password: Yup.string()
                     .required('Required')
                     .min(6, 'Must be at least 6 characters long')
@@ -59,7 +62,7 @@ const SignUpForm = () => {
                 isSubmitting
             }) => (
                 <form onSubmit={handleSubmit} className={styles.form}>
-                    <FormInput 
+                    <FormInput
                         label="Username"
                         type="text"
                         name="username"
@@ -71,6 +74,17 @@ const SignUpForm = () => {
                         errorMessage={errors.username && errors.username}
                     />
                     <FormInput 
+                        label="Email"
+                        type="email"
+                        name="email"
+                        autoComplete="off"
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        hasError={touched.email && errors.email}
+                        errorMessage={errors.email && errors.email}
+                    />
+                    <FormInput
                         label="Password"
                         type="password"
                         name="password"
@@ -81,7 +95,7 @@ const SignUpForm = () => {
                         hasError={touched.password && errors.password}
                         errorMessage={errors.password && errors.password}
                     />
-                    <FormInput 
+                    <FormInput
                         label="Password Confirm"
                         type="password"
                         name="passwordConfirm"
@@ -104,7 +118,7 @@ const SignUpForm = () => {
                         Sign up
                     </Button>
                 </form>
-            )} 
+            )}
         </Formik>
     );
 };

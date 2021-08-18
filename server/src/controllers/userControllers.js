@@ -17,22 +17,23 @@ exports.signup = async (req, res) => {
     }
 
     try {
-        const { username } = req.body;
+        const { username, email } = req.body;
 
         const hashedPassword = await hashPassword(req.body.password);
 
         const userData = {
             username: username.toLowerCase(),
+            email: email,
             password: hashedPassword
         };
 
         const existingUsername = await User.findOne({
-            username: userData.username
+            email: userData.email
         });
 
         if (existingUsername) {
             return res.status(400).json({
-                message: 'Username already exists.'
+                message: 'Email already exists.'
             });
         }
 
@@ -44,9 +45,10 @@ exports.signup = async (req, res) => {
             const decodedToken = jwtDecode(token);
             const expiresAt = decodedToken.exp;
 
-            const { username, id, created, isAdmin, avatar } = savedUser;
+            const { username, email, id, created, isAdmin, avatar } = savedUser;
             const userInfo = {
                 username,
+                email,
                 id,
                 created,
                 isAdmin,
@@ -71,7 +73,7 @@ exports.signup = async (req, res) => {
     }
 };
 
-exports.authenticate = async (req, res) => {
+exports.login = async (req, res) => {
     const result = validationResult(req);
 
     if (!result.isEmpty()) {
@@ -80,14 +82,14 @@ exports.authenticate = async (req, res) => {
     }
 
     try {
-        const { username, password } = req.body;
+        const { email, password } = req.body;
         const user = await User.findOne({
-            username: username.toLowerCase()
+            email: email
         });
 
         if (!user) {
             return res.status(403).json({
-                message: 'Wrong username.'
+                message: 'Wrong email.'
             });
         }
 
@@ -98,9 +100,10 @@ exports.authenticate = async (req, res) => {
             const decodedToken = jwtDecode(token);
             const expiresAt = decodedToken.exp;
 
-            const { username, id, created, isAdmin, avatar } = user;
+            const { username, email, id, created, isAdmin, avatar } = user;
             const userInfo = {
                 username,
+                email,
                 id,
                 created,
                 isAdmin,
@@ -153,7 +156,7 @@ exports.find = async (req, res, next) => {
     }
 };
 
-exports.validateUser = [
+exports.signupUser = [
     body('username')
         .exists()
         .trim()
@@ -167,7 +170,42 @@ exports.validateUser = [
 
         .matches(/^[a-zA-Z0-9_-]+$/)
         .withMessage('contains invalid characters'),
+    body('email')
+        .exists()
+        .trim()
+        .withMessage('is required')
 
+        .notEmpty()
+        .withMessage('cannot be blank')
+
+        .isEmail()
+        .withMessage('must be an email'),
+    body('password')
+        .exists()
+        .trim()
+        .withMessage('is required')
+
+        .notEmpty()
+        .withMessage('cannot be blank')
+
+        .isLength({ max: 16 })
+        .withMessage('must be at most 16 characters long')
+
+        .isLength({ max: 50 })
+        .withMessage('must be at most 50 characters long')
+];
+
+exports.loginUser = [
+    body('email')
+        .exists()
+        .trim()
+        .withMessage('is required')
+
+        .notEmpty()
+        .withMessage('cannot be blank')
+
+        .isEmail()
+        .withMessage('must be an email'),
     body('password')
         .exists()
         .trim()

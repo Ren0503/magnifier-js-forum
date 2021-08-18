@@ -10,10 +10,14 @@ const userModel = new mongoose.Schema({
         type: String,
         required: true,
     },
+    email: {
+        type: String,
+        required: true,
+    },
     avatar: {
         type: String,
         default: function () {
-            return `https://secure.gravatar.com/avatar/${this._id}?s=90&d=identicon`;
+            return `https://www.gravatar.com/avatar/${this._id}?d=wavatar`;
         }
     },
     isAdmin: {

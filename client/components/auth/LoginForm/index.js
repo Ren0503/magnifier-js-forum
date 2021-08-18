@@ -19,11 +19,11 @@ const LoginForm = () => {
 
     return (
         <Formik
-            initialValues={{ username: '', password: '' }}
+            initialValues={{ email: '', password: '' }}
             onSubmit={async (values, { setStatus, resetForm }) => {
                 setLoading(true);
                 try {
-                    const { data } = await publicFetch.post('authenticate', values);
+                    const { data } = await publicFetch.post('login', values);
                     const { token, expiresAt, userInfo } = data;
                     setAuthState({ token, expiresAt, userInfo });
                     resetForm({});
@@ -34,10 +34,9 @@ const LoginForm = () => {
                 setLoading(false);
             }}
             validationSchema={Yup.object({
-                username: Yup.string()
+                email: Yup.string()
                     .required('Required')
-                    .max(16, 'Must be at most 16 characters long')
-                    .matches(/^[a-zA-Z0-9_-]+$/, 'Contains invalid characters'),
+                    .email('Invalid email format'),
                 password: Yup.string()
                     .required('Required')
                     .min(6, 'Must be at least 6 characters long')
@@ -56,15 +55,15 @@ const LoginForm = () => {
             }) => (
                 <form onSubmit={handleSubmit} className={styles.form}>
                     <FormInput 
-                        label="Username"
-                        type="text"
-                        name="username"
+                        label="Email"
+                        type="email"
+                        name="email"
                         autoComplete="off"
-                        value={values.username}
+                        value={values.email}
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        hasError={touched.username && errors.username}
-                        errorMessage={errors.username && errors.username}
+                        hasError={touched.email && errors.email}
+                        errorMessage={errors.email && errors.email}
                     />
                     <FormInput 
                         label="Password"
