@@ -1,7 +1,7 @@
-# OneMillions
-
-- **server** This package container API for OneMillions, build with Nodejs, Express and MongoDB with Mongoose. Use REST API.
-- **client** Is a frontend for ZenZen, build with Next, Context API and CSS Modules.
+# Magnifier
+![Magnifier](https://github.com/Ren0503/magnifier-js-forum/blob/master/client/public/header.png)
+- **server** This package container API for Magnifier, build with Nodejs, Express and MongoDB with Mongoose. Use REST API.
+- **client** Is a frontend for Magnifier, build with Next, Context API and CSS Modules.
 
 ## Features
 
@@ -39,3 +39,43 @@
 | react-tagsinput | [plugins/react-tagsinput/README.md](https://github.com/olahol/react-tagsinput/blob/master/README.md) |
 | yup | [plugins/yup/README.md](https://github.com/reduxjs/redux)|
 | postcss | [plugins/postcss/README.md](https://github.com/postcss/postcss/blob/main/README.md)|
+
+## Core Structure
+    code
+      ├── package.json
+      │
+      ├── client
+      │   ├── components
+      │   ├── constants
+      │   ├── context
+      │   ├── hooks
+      │   ├── layout
+      │   ├── pages
+      │   ├── public
+      │   ├── styles
+      │   ├── utils
+      │   └── package.json
+      │
+      ├── server 
+      │   ├── src
+      │   │   ├── config
+      │   │   ├── controllers
+      │   │   ├── middleware
+      │   │   ├── models
+      │   │   ├── routes
+      │   │   ├── utils
+      │   │   └── server.js
+      ├── .gitignore
+      └── README.md
+
+
+### Screenshots
+
+
+|                                        Home                                        |                                        Detail                                        |                                        Tags                                        |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![](https://github.com/Ren0503/magnifier-js-forum/blob/master/client/public/screenshots/home.png) | ![](https://github.com/Ren0503/magnifier-js-forum/blob/master/client/public/screenshots/detail.png) | ![](https://github.com/Ren0503/magnifier-js-forum/blob/master/client/public/screenshots/tags.png) |
+
+|                                        Users                                        |                                        Profile                                        |                                        Ask                                        |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![](https://github.com/Ren0503/magnifier-js-forum/blob/master/client/public/screenshots/users.png) | ![](https://github.com/Ren0503/magnifier-js-forum/blob/master/client/public/screenshots/profile.png) | ![](https://github.com/Ren0503/magnifier-js-forum/blob/master/client/public/screenshots/ask.png) |
