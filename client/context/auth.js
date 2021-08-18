@@ -45,7 +45,7 @@ const AuthProvider = ({ children }) => {
     };
 
     const isAdmin = () => {
-        return authState.userInfo?.isAdmin === true;
+        return authState.userInfo?.isAdmin;
     };
 
     return (

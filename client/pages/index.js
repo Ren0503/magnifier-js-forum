@@ -98,7 +98,12 @@ const HomePage = () => {
                 author={author}
                 createdTime={created}
               >
-                {text}
+                {text.length > 30
+                  ?
+                  <div dangerouslySetInnerHTML={{ __html: text.substring(0, 30) + "...." }} />
+                  :
+                  <div dangerouslySetInnerHTML={{ __html: text }} />
+                }
               </QuestionSummary>
             </QuestionWrapper>
           )

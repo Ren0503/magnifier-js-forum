@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useRouter } from 'next/router';
-import { Formik } from 'formik';
+import { Field, Formik } from 'formik';
 import * as Yup from 'yup';
 
 import { FetchContext } from 'context/fetch';
@@ -8,6 +8,7 @@ import { Button, TextArea, FormInput } from 'components/shared';
 import { TagInput } from 'components/tag';
 
 import styles from './question-form.module.css';
+import Editor from 'components/shared/Editor';
 
 const QuestionForm = () => {
     const router = useRouter();
@@ -70,6 +71,10 @@ const QuestionForm = () => {
                             errorMessage={errors.title && errors.title}
                             placeholder="e.g Is there an R function for finding the index of an element in a vendor?"
                         />
+                        <Field name="text">
+                            {({ field }) => <Editor value={field.value} onChange={field.onChange(field.name)} />}
+                        </Field>
+                        {/*}
                         <TextArea
                             label="Body"
                             inputInfo="Include all the information someone would need to answer your question"
@@ -80,7 +85,7 @@ const QuestionForm = () => {
                             onBlur={handleBlur}
                             hasError={touched.text && errors.text}
                             errorMessage={errors.text && errors.text}
-                        />
+                        />*/}
                         <TagInput
                             label="Tags"
                             inputInfo="Add up to 5 tags to describe what your question is about"

@@ -76,7 +76,7 @@ const QuestionDetail = ({ questionId, title }) => {
                                 created={question.created}
                                 questionId={questionId}
                             >
-                                {question.text}
+                                <div dangerouslySetInnerHTML={{ __html: question.text }} />
                             </PostSummary>
                             <CommentList questionId={questionId} setQuestion={setQuestion}>
                                 {question.comments.map(({ id, author, created, body }) => (
