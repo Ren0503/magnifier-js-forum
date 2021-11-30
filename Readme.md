@@ -1,18 +1,19 @@
 # Magnifier
 ![Magnifier](https://github.com/Ren0503/magnifier-js-forum/blob/master/client/public/header.png)
-- **server** This package container API for Magnifier, build with Nodejs, Express and MongoDB with Mongoose. Use REST API.
-- **client** Is a frontend for Magnifier, build with Next, Context API and CSS Modules.
+> Magnifier diễn đàn cho hỏi đáp các vấn đề về công nghệ thông tin. 
+- **server** : chứa API cho diễn đàn, được tạo bằng Nodejs, Express và MongoDB với Mongoose. Sử dụng REST API.
+- **client**: trang giao diện, được tạo với Next, Context API và CSS Modules.
 
-## Features
+## Tính năng
 
-1. Login/Signup
-2. Ask a questions
-3. Answer a question
-4. Add comment for question/answer
-5. Upvote/Downvote 
-6. Search by tags
-7. Search users
-8. Sorting by views, vote, newer
+1. Đăng nhập/đăng ký
+2. Hỏi câu hỏi
+3. Trả lời câu hỏi
+4. Bình luận câu hỏi/trả lời
+5. Upvote/Downvote
+6. Tìm kiếm tags
+7. Tìm kiếm người dùng
+8. Sắp xếp theo lượt xem, views, thời gian
 
 ### Server
 
